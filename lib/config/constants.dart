@@ -13,7 +13,7 @@ const kTextColor = Color(0xFF757575);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
-final headingStyle = TextStyle(
+const headingStyle = TextStyle(
   fontSize: 28, //getProportionateScreenWidth(28),
   fontWeight: FontWeight.bold,
   color: Colors.black,
@@ -36,7 +36,7 @@ const String kAddressNullError = "Please Enter your address";
 
 final otpInputDecoration = InputDecoration(
   contentPadding:
-      EdgeInsets.symmetric(vertical: 15 //getProportionateScreenWidth(15)
+      const EdgeInsets.symmetric(vertical: 15 //getProportionateScreenWidth(15)
           ),
   border: outlineInputBorder(),
   focusedBorder: outlineInputBorder(),
@@ -47,6 +47,6 @@ OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(15 //getProportionateScreenWidth(15)
         ),
-    borderSide: BorderSide(color: kTextColor),
+    borderSide: const BorderSide(color: kTextColor),
   );
 }
