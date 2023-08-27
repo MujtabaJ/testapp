@@ -20,23 +20,23 @@ class _CategoryButtonState extends State<CategoryButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 40,
+      width: 50,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-              width: 40,
-              height: 40,
+              width: 50,
+              height: 50,
               padding: EdgeInsets.all(widget.padding),
               margin: EdgeInsets.only(bottom: 5),
               decoration: BoxDecoration(
-                  color: Colors.pink[300],
+                  color: Colors.pink[50],
                   borderRadius: BorderRadius.circular(5)),
               child: SvgPicture.asset(
                 widget.iconPath,
-                color: Colors.white,
+                color: Colors.orange,
               )
               // Icon(
               //   Icons.flash_on_sharp,
