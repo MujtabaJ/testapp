@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontWeight: FontWeight.w700)),
                   ]),
               decoration: BoxDecoration(
-                  color: Colors.purple,
+                  color: Colors.deepPurple[900],
                   borderRadius: BorderRadius.circular(20)),
             ),
             Row(
@@ -108,6 +108,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 // return Text("A");
               }).toList(),
             ),
+            SpecialCards(),
+            PopularCards(),
             SpecialCards(),
             PopularCards()
           ]),

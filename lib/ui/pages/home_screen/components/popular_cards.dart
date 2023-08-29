@@ -61,6 +61,9 @@ class _PopularCardsState extends State<PopularCards> {
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage("assets/images/3.jpg"))),
+                child: MaterialButton(onPressed: () {
+                  Navigator.pushNamed(context, "/detail");
+                }),
               ),
               Container(
                 width: 200,
