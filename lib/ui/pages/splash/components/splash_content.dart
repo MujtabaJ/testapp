@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../config/constants.dart';
-import '../../../../config/size_config.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({
@@ -15,8 +14,8 @@ class SplashContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Spacer(),
-        Text(
+        const Spacer(),
+        const Text(
           "TOKOTO",
           style: TextStyle(
             fontSize: 36, //getProportionateScreenWidth(36),
@@ -28,7 +27,7 @@ class SplashContent extends StatelessWidget {
           text!,
           textAlign: TextAlign.center,
         ),
-        Spacer(flex: 2),
+        const Spacer(flex: 2),
         Image.asset(
           image!,
           height: 265, //getProportionateScreenHeight(265),

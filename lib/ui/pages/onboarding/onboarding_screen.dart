@@ -119,9 +119,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignInScreen()));
+                                  builder: (context) => const SignInScreen()));
                             },
-                            child: const Text("START"),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
@@ -135,6 +134,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               textStyle:
                                   TextStyle(fontSize: (width <= 550) ? 13 : 17),
                             ),
+                            child: const Text("START"),
                           ),
                         )
                       : Padding(
@@ -146,16 +146,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 onPressed: () {
                                   _controller.jumpToPage(2);
                                 },
-                                child: const Text(
-                                  "SKIP",
-                                  style: TextStyle(color: Colors.black),
-                                ),
                                 style: TextButton.styleFrom(
                                   elevation: 0,
                                   textStyle: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: (width <= 550) ? 13 : 17,
                                   ),
+                                ),
+                                child: const Text(
+                                  "SKIP",
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ),
                               ElevatedButton(
@@ -165,7 +165,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     curve: Curves.easeIn,
                                   );
                                 },
-                                child: const Text("NEXT"),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.black,
                                   shape: RoundedRectangleBorder(
@@ -180,6 +179,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   textStyle: TextStyle(
                                       fontSize: (width <= 550) ? 13 : 17),
                                 ),
+                                child: const Text("NEXT"),
                               ),
                             ],
                           ),
