@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:testapp/config/size_config.dart';
 
 import '../../../../constants.dart';
-import '../../../../size_config.dart';
 
 class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
@@ -18,6 +18,7 @@ class IconBtnWithCounter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return InkWell(
       borderRadius: BorderRadius.circular(100),
       onTap: press,
@@ -25,35 +26,40 @@ class IconBtnWithCounter extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Container(
-            padding: EdgeInsets.all(getProportionateScreenWidth(12)),
-            height: getProportionateScreenWidth(46),
-            width: getProportionateScreenWidth(46),
+            height: SizeConfig.blockV! * 13,
+            width: SizeConfig.blockH! * 13,
             decoration: BoxDecoration(
               color: kSecondaryColor.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: SvgPicture.asset(svgSrc),
+            child: Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: SvgPicture.asset(svgSrc),
+            ),
           ),
           if (numOfitem != 0)
             Positioned(
-              top: -3,
-              right: 0,
+              top: 8,
+              right: -2,
               child: Container(
-                height: getProportionateScreenWidth(16),
-                width: getProportionateScreenWidth(16),
+                height: SizeConfig.blockV! * 5,
+                width: SizeConfig.blockH! * 5,
                 decoration: BoxDecoration(
                   color: Color(0xFFFF4848),
                   shape: BoxShape.circle,
                   border: Border.all(width: 1.5, color: Colors.white),
                 ),
                 child: Center(
-                  child: Text(
-                    "$numOfitem",
-                    style: TextStyle(
-                      fontSize: getProportionateScreenWidth(10),
-                      height: 1,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Text(
+                      "$numOfitem",
+                      style: TextStyle(
+                        fontSize: 10,
+                        height: 1,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

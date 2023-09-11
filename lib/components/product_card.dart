@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:testapp/config/size_config.dart';
 import 'package:testapp/models/Product.dart';
 import 'package:testapp/ui/pages/details/details_screen.dart';
 
 import '../constants.dart';
-import '../size_config.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
-    this.width = 140,
     this.aspectRetio = 1.02,
     required this.product,
   }) : super(key: key);
 
-  final double width, aspectRetio;
+  final aspectRetio;
   final Product product;
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Padding(
-      padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
+      padding: EdgeInsets.only(left: 10),
       child: SizedBox(
-        width: getProportionateScreenWidth(width),
+        width: SizeConfig.blockH! * 35,
         child: GestureDetector(
           onTap: () => Navigator.pushNamed(
             context,
@@ -33,9 +33,9 @@ class ProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AspectRatio(
-                aspectRatio: 1.02,
+                aspectRatio: aspectRetio,
                 child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+                  padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: kSecondaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),
@@ -50,7 +50,8 @@ class ProductCard extends StatelessWidget {
               Text(
                 product.title,
                 style: TextStyle(color: Colors.black),
-                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +59,7 @@ class ProductCard extends StatelessWidget {
                   Text(
                     "\$${product.price}",
                     style: TextStyle(
-                      fontSize: getProportionateScreenWidth(18),
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor,
                     ),
@@ -67,9 +68,9 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     onTap: () {},
                     child: Container(
-                      padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                      height: getProportionateScreenWidth(28),
-                      width: getProportionateScreenWidth(28),
+                      padding: EdgeInsets.all(8),
+                      height: SizeConfig.blockV! * 8,
+                      width: SizeConfig.blockH! * 8,
                       decoration: BoxDecoration(
                         color: product.isFavourite
                             ? kPrimaryColor.withOpacity(0.15)
