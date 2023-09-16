@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-import '../config/constants.dart';
+import 'package:testapp/constants.dart';
 
 class NoAccountText extends StatelessWidget {
   const NoAccountText({

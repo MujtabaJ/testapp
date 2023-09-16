@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:testapp/components/custom_surfix_icon.dart';
 import 'package:testapp/components/no_account_text.dart';
 import 'package:testapp/components/socal_card.dart';
-import '../../../../config/constants.dart';
-import '../../../../config/size_config.dart';
+import 'package:testapp/constants.dart';
+import 'package:testapp/size_config.dart';
 import 'sign_form.dart';
 
-double height = SizeConfig.screenH!;
+double height = SizeConfig.screenHeight!;
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -47,7 +47,7 @@ class _BodyState extends State<Body> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(width: double.infinity, height: 40),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 const Text(
                   "Welcome Back",
                   style: TextStyle(
@@ -56,20 +56,13 @@ class _BodyState extends State<Body> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Text("Sign in with email and password"),
-                const Padding(padding: EdgeInsets.all(10)),
-                const Image(
-                    image: AssetImage("assets/images/login-image.png"),
-                    height: 90),
-                const SignForm(),
-                // Text(
-                //   "Sign in with your email and password  \nor continue with social media",
-                //   textAlign: TextAlign.center,
-                // ),
-                // SizedBox(width: double.infinity, height: 80),
-                // SignForm(),
-                // SizedBox(width: double.infinity, height: 40),
-                const Padding(padding: EdgeInsets.all(10)),
+                const Text(
+                  "Sign in with your email and password  \nor continue with social media",
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SignForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
