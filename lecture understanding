@@ -5,3 +5,40 @@ MVC - Model View Controller
 
 MVVM - Model View View Model 
 
+API - Discussion
+
+What is REST API?
+An API is the set of definitions and protocols for building and integrating the application software. You can put it Simply as a contract between an information provider and the user. 
+
+For example, the API design for movie ticket booking could specify that users need to supply the Theater name, movie name, show time, and the number of seats. And the replay body should have the available seats for the requested show. 
+
+In general, API acts as a mediator between the end user and backend resources and services. In fact, it is the most secure and fastest way to make applications communicate while having full control over app services and data. 
+
+REST (Representational State Transfer) API or the web API conforms to the constraints of REST architectural style and allows app interactions with the RESTful web services. 
+
+‍
+
+How does REST API work?
+REST API uses simple HTTP calls to communicate with JSON data. A user application can make GET, POST, PUT or DELETE HTTP requests to a database and send results for the query request in the response database. The result can be in JSON, HTML, or XML, which is then parsed into the proper model class to use in the app. 
+‍
+
+‍
+REST API integration in the Flutter app
+In general, you will go through the following steps for integrating an API into the Flutter application. 
+
+Get the base URL, the endpoints, and the API key.
+Add required packages in-app to consume HTTP resources like http, dio, chopper, etc.
+Create a constant file that will hold all your URLs and Endpoints. 
+Parse JSON file to get the Object out of the JSON response. 
+Create files to handle API calls with specific methods to fetch and parse data.
+Make a method call to load data onto your UI.
+Moreover, while integrating APIs you need to consider the web standards and conventions.
+
+
+Some of the core methods are as follows
+read − Request the specified url through GET method and return back the response as Future<String>
+get − Request the specified url through GET method and return back the response as Future<Response>. Response is a class holding the response information.
+post − Request the specified url through POST method by posting the supplied data and return back the response as Future<Response>
+put − Request the specified url through PUT method and return back the response as Future <Response>
+head − Request the specified url through HEAD method and return back the response as Future<Response>
+delete − Request the specified url through DELETE method and return back the response as Future<Response>
