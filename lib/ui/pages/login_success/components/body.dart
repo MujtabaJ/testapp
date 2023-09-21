@@ -29,8 +29,11 @@ class Body extends StatelessWidget {
             text: "Back to home",
             press: () {
               // Navigator.pushNamed(context, HomeScreen.routeName);
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+              // Navigator.of(context)
+              //     .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()));
             },
           ),
         ),

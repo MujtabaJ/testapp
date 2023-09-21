@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/components/no_account_text.dart';
 import 'package:testapp/components/socal_card.dart';
-import '../../../../config/size_config.dart';
+import 'package:testapp/size_config.dart';
 import 'sign_form.dart';
 
 class Body extends StatelessWidget {
@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: SizeConfig.screenH! * 0.04),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 const Text(
                   "Welcome Back",
                   style: TextStyle(
@@ -28,9 +28,9 @@ class Body extends StatelessWidget {
                   "Sign in with your email and password  \nor continue with social media",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: SizeConfig.screenH! * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
                 SignForm(),
-                SizedBox(height: SizeConfig.screenH! * 0.08),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

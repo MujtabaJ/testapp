@@ -78,8 +78,12 @@ class _SignFormState extends State<SignForm> {
                 // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
                 // Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => LoginSuccessScreen()));
+                // Navigator.of(context).push(MaterialPageRoute(
+                //     builder: (context) => LoginSuccessScreen()));
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => LoginSuccessScreen()));
               }
             },
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/config/size_config.dart';
+import 'package:testapp/size_config.dart';
 import 'package:testapp/ui/pages/onboarding/onboarding_content.dart';
 import 'package:testapp/ui/pages/sign_in/sign_in_screen.dart';
 
@@ -47,8 +47,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    double width = SizeConfig.screenW!;
-    double height = SizeConfig.screenH!;
+    double width = SizeConfig.screenWidth;
+    double height = SizeConfig.screenHeight;
 
     return Scaffold(
       backgroundColor: colors[_currentPage],
@@ -118,8 +118,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           padding: const EdgeInsets.all(30),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignInScreen()));
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignInScreen()));
+
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (context) => SignInScreen()));
                             },
                             child: const Text("START"),
                             style: ElevatedButton.styleFrom(
