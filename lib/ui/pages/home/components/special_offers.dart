@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../size_config.dart';
+import '../../../../config/size_config.dart';
 import 'section_title.dart';
 
 class SpecialOffers extends StatelessWidget {
@@ -13,14 +13,13 @@ class SpecialOffers extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: SectionTitle(
             title: "Special for you",
             press: () {},
           ),
         ),
-        SizedBox(height: getProportionateScreenWidth(20)),
+        SizedBox(height: 15),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -37,7 +36,7 @@ class SpecialOffers extends StatelessWidget {
                 numOfBrands: 24,
                 press: () {},
               ),
-              SizedBox(width: getProportionateScreenWidth(20)),
+              SizedBox(width: 10),
             ],
           ),
         ),
@@ -61,55 +60,56 @@ class SpecialOfferCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
-      child: GestureDetector(
-        onTap: press,
-        child: SizedBox(
-          width: getProportionateScreenWidth(242),
-          height: getProportionateScreenWidth(100),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Stack(
-              children: [
-                Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFF343434).withOpacity(0.4),
-                        Color(0xFF343434).withOpacity(0.15),
-                      ],
+    SizeConfig().init(context);
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(left: 10),
+        child: GestureDetector(
+          onTap: press,
+          child: SizedBox(
+            width: SizeConfig.blockH! * 60,
+            height: SizeConfig.blockV! * 13,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Stack(
+                children: [
+                  Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                    repeat: ImageRepeat.noRepeat,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFF343434).withOpacity(0.4),
+                          Color(0xFF343434).withOpacity(0.15),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(15.0),
-                    vertical: getProportionateScreenWidth(10),
-                  ),
-                  child: Text.rich(
-                    TextSpan(
-                      style: TextStyle(color: Colors.white),
-                      children: [
-                        TextSpan(
-                          text: "$category\n",
-                          style: TextStyle(
-                            fontSize: getProportionateScreenWidth(18),
-                            fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Text.rich(
+                      TextSpan(
+                        style: TextStyle(color: Colors.white),
+                        children: [
+                          TextSpan(
+                            text: "$category\n",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        TextSpan(text: "$numOfBrands Brands")
-                      ],
+                          TextSpan(text: "$numOfBrands Brands")
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

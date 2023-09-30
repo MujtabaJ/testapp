@@ -12,18 +12,21 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: getProportionateScreenHeight(20)),
-            HomeHeader(),
-            SizedBox(height: getProportionateScreenWidth(10)),
-            DiscountBanner(),
-            Categories(),
-            SpecialOffers(),
-            SizedBox(height: getProportionateScreenWidth(30)),
-            PopularProducts(),
-            SizedBox(height: getProportionateScreenWidth(30)),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            children: [
+              HomeHeader(),
+              DiscountBanner(),
+              SizedBox(height: 10),
+              Categories(),
+              SizedBox(height: 10),
+              SpecialOffers(),
+              SizedBox(height: 15),
+              PopularProducts(),
+              SizedBox(height: 10),
+            ],
+          ),
         ),
       ),
     );

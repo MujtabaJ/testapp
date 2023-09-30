@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/components/default_button.dart';
+import 'package:testapp/config/size_config.dart';
 import 'package:testapp/models/Product.dart';
-import 'package:testapp/size_config.dart';
-
 import 'color_dots.dart';
 import 'product_description.dart';
 import 'top_rounded_container.dart';
@@ -15,6 +14,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return ListView(
       children: [
         ProductImages(product: product),
@@ -35,10 +35,10 @@ class Body extends StatelessWidget {
                       color: Colors.white,
                       child: Padding(
                         padding: EdgeInsets.only(
-                          left: SizeConfig.screenWidth * 0.15,
-                          right: SizeConfig.screenWidth * 0.15,
-                          bottom: getProportionateScreenWidth(40),
-                          top: getProportionateScreenWidth(15),
+                          left: SizeConfig.blockH! * 15,
+                          right: SizeConfig.blockH! * 15,
+                          bottom: SizeConfig.blockV! * 5,
+                          top: SizeConfig.blockV! * 5,
                         ),
                         child: DefaultButton(
                           text: "Add To Cart",

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:testapp/config/size_config.dart';
 import 'package:testapp/models/Product.dart';
-
 import '../../../../constants.dart';
-import '../../../../size_config.dart';
 
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
@@ -21,8 +20,7 @@ class ProductDescription extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Text(
             product.title,
             style: Theme.of(context).textTheme.headline6,
@@ -31,8 +29,8 @@ class ProductDescription extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: Container(
-            padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-            width: getProportionateScreenWidth(64),
+            padding: EdgeInsets.all(18),
+            width: SizeConfig.blockH! * 17,
             decoration: BoxDecoration(
               color:
                   product.isFavourite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
@@ -45,14 +43,13 @@ class ProductDescription extends StatelessWidget {
               "assets/icons/Heart Icon_2.svg",
               color:
                   product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
-              height: getProportionateScreenWidth(16),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(
-            left: getProportionateScreenWidth(20),
-            right: getProportionateScreenWidth(64),
+            left: SizeConfig.blockH! * 5,
+            right: SizeConfig.blockH! * 20,
           ),
           child: Text(
             product.description,
@@ -61,7 +58,7 @@ class ProductDescription extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
+            horizontal: 20,
             vertical: 10,
           ),
           child: GestureDetector(
