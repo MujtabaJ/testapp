@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:testapp/constants.dart';
+import 'package:testapp/ui/pages/sign_up%20copy/sign_up_screen.dart';
 
 class NoAccountText extends StatelessWidget {
   const NoAccountText({
@@ -17,7 +18,7 @@ class NoAccountText extends StatelessWidget {
             ),
         GestureDetector(
           onTap: () {
-            // Navigator.pushNamed(context, SignInScreen.routeName),
+            Navigator.pushNamed(context, SignUpScreen.routeName);
           },
           child: const Text(
             "Sign Up",
