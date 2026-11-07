@@ -1,17 +1,38 @@
-# testapp
+# Flutter E-commerce App UI
 
-A new Flutter project.
+A shopping app UI built with **Flutter** and **Dart**: sign-in, profile setup, product listing, cart and checkout.
 
-## Getting Started
+<p align="center">
+  <img src="homescreen.png" alt="Home screen" width="30%">
+  <img src="detailscreen.png" alt="Product detail screen" width="30%">
+  <img src="2.png" alt="App screen" width="30%">
+</p>
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Sign-in screen with form validation and social sign-in buttons
+- Complete-profile flow
+- Home screen with product cards
+- Product details
+- Cart with item cards and a checkout summary
+- Custom bottom navigation bar and reusable components
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tech
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# testapp
+- **Flutter** / **Dart**
+- Reusable widgets in `lib/components/` (buttons, product card, form errors, bottom nav)
+- `Product` and `Cart` models in `lib/models/`
+- Screens in `lib/ui/pages/`
+- Responsive sizing helper (`size_config.dart`)
+- Runs on Android, iOS, web and desktop
+
+## Run
+
+```bash
+flutter pub get
+flutter run
+```
+
+---
+
+Built by [Ghulam Mujtaba](https://github.com/MujtabaJ), Flutter and AI app developer. [Hire me on Upwork](https://www.upwork.com/freelancers/ghulammujtaba12).
