@@ -2,12 +2,6 @@
 
 A shopping app UI built with **Flutter** and **Dart**: sign-in, profile setup, product listing, cart and checkout.
 
-<p align="center">
-  <img src="homescreen.png" alt="Home screen" width="30%">
-  <img src="detailscreen.png" alt="Product detail screen" width="30%">
-  <img src="2.png" alt="App screen" width="30%">
-</p>
-
 ## Features
 
 - Sign-in screen with form validation and social sign-in buttons
